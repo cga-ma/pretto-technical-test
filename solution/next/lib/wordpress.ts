@@ -91,7 +91,6 @@ export async function getPost(slug: string, categoryBasePath: string): Promise<P
     if (!posts || posts.length === 0) return null
 
     const raw = posts[0]
-    console.log('Fetched post:', raw.yoast_head_json);
 
     const cleanExcerpt = decode(raw.excerpt.rendered.replace(/<[^>]+>/g, ''))
         .replace(/\n/g, ' ')
